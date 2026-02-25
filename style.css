@@ -27,6 +27,22 @@ body {
   overflow-x: hidden;
 }
 
+.app-shell {
+  width: min(100%, 460px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.screen {
+  display: grid;
+  place-items: center;
+}
+
+.screen[hidden] {
+  display: none !important;
+}
+
 .hearts {
   position: fixed;
   inset: 0;
@@ -70,6 +86,128 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid #ffffffcc;
   box-shadow: 0 22px 46px rgba(53, 34, 85, 0.24), inset 0 1px 0 #fff;
+}
+
+.menu-card {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-screen .menu-card {
+  border-radius: 22px;
+  padding: 24px 16px 26px;
+  background: linear-gradient(165deg, #f7f9fcf0, #eef3faf0 52%, #e9f0f9f0);
+  border: 1px solid #dbe4f3;
+  box-shadow: 0 10px 20px rgba(52, 65, 92, 0.12);
+}
+
+.menu-screen .title-badge {
+  color: #4c5b77;
+  letter-spacing: 0.35px;
+  background: #e8eef7;
+  box-shadow: none;
+}
+
+.menu-screen h1 {
+  color: #2f3e57;
+  font-size: clamp(1.35rem, 5.3vw, 1.75rem);
+  text-shadow: none;
+}
+
+.menu-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu-btn {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 0.98rem;
+}
+
+.menu-screen .menu-btn {
+  color: #2f415f;
+  border: 1px solid #d4deed;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(58, 72, 102, 0.1);
+}
+
+.menu-btn.valentine {
+  background: linear-gradient(135deg, #ff4ca5, #ff85c1 65%, #ffb9dd);
+}
+
+.menu-btn.songs {
+  background: linear-gradient(135deg, #4b89ff, #73beff 68%, #9ad7ff);
+}
+
+.menu-screen .menu-btn.valentine {
+  background: linear-gradient(135deg, #edf2fb, #e4ebf7 70%, #dfe7f4);
+}
+
+.menu-screen .menu-btn.songs {
+  background: linear-gradient(135deg, #f2f6fc, #e9eff8 70%, #e2e9f4);
+}
+
+.menu-screen .menu-btn:hover,
+.menu-screen .menu-btn:focus-visible {
+  transform: translateY(0);
+  filter: none;
+  outline: none;
+}
+
+.content-screen {
+  gap: 10px;
+}
+
+.back-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #6d57d8, #8e7aef);
+  box-shadow: 0 8px 14px rgba(67, 52, 115, 0.26);
+  cursor: pointer;
+}
+
+.back-btn:hover,
+.back-btn:focus-visible {
+  filter: brightness(1.05);
+  outline: none;
+}
+
+.songs-card {
+  min-height: 330px;
+}
+
+.songs-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.song-item {
+  border-radius: 12px;
+  padding: 0;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffe4f3, #e4efff);
+  border: 1px solid #ffffffd6;
+  box-shadow: 0 5px 12px rgba(66, 53, 108, 0.14);
+}
+
+.song-link {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .title-badge {
@@ -841,6 +979,15 @@ h1 {
   .card {
     padding: 20px 12px 30px;
     border-radius: 24px;
+  }
+
+  .menu-btn {
+    font-size: 0.92rem;
+  }
+
+  .back-btn {
+    font-size: 0.86rem;
+    padding: 9px 12px;
   }
 
   .gift-scene {
